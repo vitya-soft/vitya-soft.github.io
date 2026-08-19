@@ -16,3 +16,8 @@ Copy lives in `data-en` / `data-hu` / `data-pr` attributes (plus `data-title-*`,
 switch in the header is driven by `site.js`. English is the fallback for any
 missing translation, and `site.js` is kept byte-identical in all four site
 repositories.
+
+The four sites are four separate origins, so `localStorage` cannot carry the
+chosen language between them. Links to a sibling site are rewritten to carry a
+`?lang=` parameter, which the target page adopts on load and then removes from
+the address bar.
