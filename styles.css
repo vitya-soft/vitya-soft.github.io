@@ -367,3 +367,8 @@ section[id] { scroll-margin-top: 6.5rem; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Three languages in the header: keep the switch compact on small screens. */
+@media (max-width: 680px) {
+  .lang-switch button { padding: .42rem .46rem; font-size: .68rem; }
+}
