@@ -373,3 +373,6 @@ section[id] { scroll-margin-top: 6.5rem; }
 @media (max-width: 680px) {
   .lang-switch button { padding: .3rem .42rem; font-size: .98rem; }
 }
+
+/* The panel status label is flush right; a reserved box must not pull it left. */
+.panel-top span:last-child { text-align: right; }
