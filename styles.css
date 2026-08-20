@@ -135,13 +135,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .lang-switch button {
   border: 0;
   border-radius: 999px;
-  padding: .42rem .58rem;
+  padding: .3rem .5rem;
   cursor: pointer;
   color: var(--muted);
   background: transparent;
   font: inherit;
-  font-size: .72rem;
-  font-weight: 800;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.15;
 }
 .lang-switch button.is-active { color: var(--accent-ink); background: var(--accent); }
 
@@ -370,5 +371,5 @@ section[id] { scroll-margin-top: 6.5rem; }
 
 /* Three languages in the header: keep the switch compact on small screens. */
 @media (max-width: 680px) {
-  .lang-switch button { padding: .42rem .46rem; font-size: .68rem; }
+  .lang-switch button { padding: .3rem .42rem; font-size: .98rem; }
 }
