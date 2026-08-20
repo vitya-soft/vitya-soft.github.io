@@ -5,6 +5,7 @@
 //   data-en / data-hu / data-pr            -> element text
 //   data-aria-en / data-aria-hu / data-aria-pr -> aria-label
 //   data-title-*, data-description-*       -> document title and meta description (on <body>)
+//   data-logo-pr (on <img>)                -> the pirate-mode version of a logo
 // "pr" is Pirate English: the same information, told by someone with a parrot.
 // Any missing translation falls back to English.
 //
@@ -75,6 +76,14 @@ function pick(dataset, prefix) {
   return dataset[key] || dataset[fallback];
 }
 
+function swapLogos() {
+  document.querySelectorAll("img[data-logo-pr]").forEach((image) => {
+    if (!image.dataset.logoDefault) image.dataset.logoDefault = image.getAttribute("src");
+    const next = language === "pr" ? image.dataset.logoPr : image.dataset.logoDefault;
+    if (image.getAttribute("src") !== next) image.setAttribute("src", next);
+  });
+}
+
 function handOverLanguage() {
   document.querySelectorAll("a[href]").forEach((link) => {
     let url;
@@ -117,6 +126,7 @@ function setLanguage(nextLanguage) {
     document.querySelector('meta[name="description"]')?.setAttribute("content", description);
   }
 
+  swapLogos();
   handOverLanguage();
 }
 

@@ -21,3 +21,7 @@ The four sites are four separate origins, so `localStorage` cannot carry the
 chosen language between them. Links to a sibling site are rewritten to carry a
 `?lang=` parameter, which the target page adopts on load and then removes from
 the address bar.
+
+Pirate English also swaps the artwork: an `<img>` carrying `data-logo-pr` shows
+its pirate mascot in that language and returns to the original logo in English
+and Hungarian.
